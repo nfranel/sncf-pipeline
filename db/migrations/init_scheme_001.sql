@@ -24,7 +24,7 @@ CREATE TABLE "raw_disruptions" (
 
 CREATE TABLE stop_areas (
   area_id   TEXT NOT NULL PRIMARY KEY,
-  name TEXT NOT NULL,
+  name      TEXT NOT NULL,
   lon       DOUBLE PRECISION NOT NULL,
   lat       DOUBLE PRECISION NOT NULL
 );
@@ -87,6 +87,8 @@ CREATE TABLE flux (
   line_id            TEXT NOT NULL REFERENCES lines(line_id),
   network_id         TEXT NOT NULL REFERENCES networks(network_id),
   physical_mode      TEXT NOT NULL,
+  created_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at         TIMESTAMPTZ NOT NULL DEFAULT now(),
   PRIMARY KEY (vehicle_journey_id, station_id)
 );
 

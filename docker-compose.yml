@@ -1,5 +1,5 @@
 services:
-  postgres:
+  sncf-db:
     image: postgres:18
     container_name: sncf_postgres
     restart: unless-stopped
@@ -11,6 +11,12 @@ services:
       - "5433:5432"   #PC port is 5433 instead of 5432 as I already have a postgres running
     volumes:
       - pgdata:/var/lib/postgresql
+    networks:
+      - sncf_net
 
 volumes:
   pgdata:
+
+networks:
+  sncf_net:
+    name: sncf_net

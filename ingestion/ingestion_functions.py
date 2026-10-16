@@ -8,20 +8,34 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
 from dotenv import load_dotenv
 from copy import deepcopy
 from datetime import datetime
+from zoneinfo import ZoneInfo
+import psycopg2
 
 # Loading the API key from the .env file
 load_dotenv()
 api_key = os.getenv("SNCF_API_KEY")
+if api_key is None:
+    raise ValueError("SNCF_API_KEY environment variable not set")
 
 BASE_URL = "https://api.sncf.com/v1/coverage/sncf"
+request_count = 0
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
+
+class HTTPErrorToRetry(Exception):
+    def __init__(self, status_code):
+        super().__init__(f"HTTP {status_code}")
+        self.status_code = status_code
 
 @retry(stop=stop_after_attempt(3),
        wait=wait_exponential(multiplier=1, min=2, max=10),
-       retry=retry_if_exception_type((requests.exceptions.ConnectionError, requests.exceptions.Timeout)),
-       before_sleep=before_sleep_log(logger, logging.WARNING))
+       retry=retry_if_exception_type((requests.exceptions.ConnectionError,
+                                      requests.exceptions.Timeout,
+                                      HTTPErrorToRetry)),
+       before_sleep=before_sleep_log(logger, logging.WARNING),
+       reraise=True)
 def verified_request(url, params=None):
     """
     Function to wrap the request and its verification
@@ -29,17 +43,17 @@ def verified_request(url, params=None):
     :param params: dict of params to use
     :return: data, a json dict obtained from request
     """
-    try:
-        response = requests.get(url, auth=(api_key, ""), params=params, timeout=10)
-        response.raise_for_status()
-        logger.info(f"Request successful : {url}")
-        return response.json()
-    except requests.exceptions.HTTPError:
-        if response.status_code == 429:
-            logger.error(f"Rate limit exceeded, retry after : {response.headers.get('Retry-After')} seconds")
-        else:
-            logger.error(f"HTTPError {response.status_code} : {response.text}")
-        raise
+    global request_count
+    request_count += 1
+    response = requests.get(url, auth=(api_key, ""), params=params, timeout=10)
+    if response.status_code == 429 or 500 <= response.status_code < 600:
+        logger.warning(f"Retryable HTTP error {response.status_code} : {url}")
+        raise HTTPErrorToRetry(response.status_code)
+    if not response.ok:
+        logger.error(f"HTTPError {response.status_code} : {response.text}")
+    response.raise_for_status()
+    logger.info(f"Request successful : {url}")
+    return response.json()
 
 def dict_merge(data_list, req_keyword):
     if req_keyword.endswith("departures"):
@@ -50,7 +64,7 @@ def dict_merge(data_list, req_keyword):
         if req_keyword != "disruptions":
             raise ValueError ("The req_keyword used is not handled")
     if len(data_list) == 0:
-        print(f"WARNING : No data fetched for {req_keyword}")
+        logger.warning(f"No data fetched for {req_keyword}")
         return {}
     else:
         # First item will serve as base. "feed_publishers" and "context" are not changing and set as that of the first item
@@ -73,7 +87,7 @@ def dict_merge(data_list, req_keyword):
 def fetch_all_pages(base_url, page_keyword, params=None):
     """Fetch all pages of data from the API """
     if params is None:
-        params = {"count": 500}
+        params = {"count": 1000}
     is_flux_data = page_keyword.endswith("departures") or page_keyword.endswith("arrivals")
     if page_keyword not in ["stop_areas", "stop_points", "lines", "networks", "disruptions"] and not is_flux_data:
         raise ValueError(f"Only stop_points, stop_areas, lines and networks page_keyword are supported, you used : {page_keyword}")
@@ -98,5 +112,23 @@ def fetch_all_pages(base_url, page_keyword, params=None):
         all_data = dict_merge(all_data, page_keyword)
     return all_data
 
+PARIS = ZoneInfo("Europe/Paris")
+
 def parse_time(value):
-    return datetime.strptime(value, "%Y%m%dT%H%M%S") if value is not None else None
+    if value is None:
+        return None
+    return datetime.strptime(value, "%Y%m%dT%H%M%S").replace(tzinfo=PARIS)
+
+def get_db_connection():
+    """
+    Opens a connexion to the postgres database
+    host and port are set using an environment variable if set or a preset value else.
+    The use of environment variable is useful for using this function (or any code using this function) in airflow
+    :return:
+    """
+    return psycopg2.connect(
+        host=os.getenv("POSTGRES_HOST", "localhost"),
+        port=os.getenv("POSTGRES_PORT", "5433"),
+        dbname=os.environ["POSTGRES_DB"],
+        user=os.environ["POSTGRES_USER"],
+        password=os.environ["POSTGRES_PASSWORD"])
