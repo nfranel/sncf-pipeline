@@ -1,0 +1,199 @@
+version: 2
+
+models:
+  - name: int_flux_deduplicated
+    description: "One row per trip and station. Flux joined with station, area, line and network names. A passage can be stored in several versions (base schedule and successive realtime updates, each with its own vehicle_journey_id): only one version is kept, realtime first, then the most recently collected."
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [trip_id, station_id]
+    columns:
+      - name: trip_id
+        description: "Id of the trip: the vehicle_journey_id without its 'vehicle_journey:' prefix and its ':RealTime:<uuid>' suffix"
+        data_tests: [not_null]
+      - name: station_id
+        description: "Id of the station"
+        data_tests: [not_null] 
+      - name: vehicle_journey_id
+        description: "Id of the retained version of the vehicle journey"
+        data_tests: [not_null]
+      - name: number_versions
+        description: "Number of versions found for this trip at this station before deduplication"
+        data_tests: [not_null]
+      - name: has_realtime_update
+        description: "True if the retained version is a realtime update"
+        data_tests: [not_null]
+      - name: line_id
+        description: "Id of the line"
+        data_tests: [not_null]
+      - name: network_id
+        description: "Id of the network"
+        data_tests: [not_null]
+      - name: physical_mode
+        description: "Physical mode of the flux"
+        data_tests: [not_null]
+      - name: service_date
+        description: "Service date in Paris time zone"
+        data_tests: [not_null]
+      - name: service_hour
+        description: "Service hour in Paris time zone"
+        data_tests: [not_null]
+      - name: service_week_day
+        description: "Service week day in Paris time zone"
+        data_tests: [not_null]
+      - name: delay_min
+        description: "Delay in minutes (negative = early): departure delay, or arrival delay if missing. Null when the passage has no scheduled time. Arrival and departure delays are identical for most of passages."
+      - name: passage_time
+        description: "Reference time of the passage: scheduled departure, else scheduled arrival, else actual times"
+        data_tests: [not_null]
+      - name: scheduled_arrival_time
+        description: "Scheduled arrival time, can be null"
+      - name: actual_arrival_time
+        description: "Actual arrival time"
+        data_tests: [not_null]
+      - name: scheduled_departure_time
+        description: "Scheduled departure time, can be null"
+      - name: actual_departure_time
+        description: "Actual departure time"
+        data_tests: [not_null]
+      - name: station_name
+        description: "Name of the station"
+        data_tests: [not_null]
+      - name: area_id
+        description: "Id of the area containing the station"
+        data_tests: [not_null]
+      - name: area_name
+        description: "Name of the area"
+        data_tests: [not_null]
+      - name: line_name
+        description: "Name of the line"
+        data_tests: [not_null]
+      - name: network_name
+        description: "Name of the network"
+        data_tests: [not_null]
+      - name: collected_at
+        description: "Time at which the retained version was collected"
+        data_tests: [not_null]
+
+  - name: int_flux_disruptions
+    description: "Pairs (passage, disruption): one row per passage affected by a disruption through a disrupted object (trip, line, network, stop point or stop area). Only passages matching at least one disruption appear here. Grain: trip_id, station_id, disruption_id, embedded_type."
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [trip_id, station_id, disruption_id, embedded_type]
+    columns:
+      - name: trip_id
+        description: "Id of the trip"
+        data_tests: [not_null]
+      - name: station_id
+        description: "Id of the station"
+        data_tests: [not_null]
+      - name: disruption_id
+        description: "Id of the disruption"
+        data_tests: [not_null]
+      - name: embedded_type
+        description: "Type of the disrupted object that links the disruption to the passage"
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ["trip", "line", "network", "stop_point", "stop_area"]
+      - name: status
+        description: "Status of the disruption: active, future or past"
+        data_tests: [not_null]
+      - name: severity
+        description: "Severity of the disruption (trip delayed, trip canceled, additional service, ...)"
+        data_tests: [not_null]
+      - name: is_canceled
+        description: "True if the disruption is a trip cancellation"
+        data_tests: [not_null]
+      - name: is_modified
+        description: "True if the disruption is a trip modification"
+        data_tests: [not_null]
+      - name: is_additional
+        description: "True if the disruption is the addition of another service"
+        data_tests: [not_null]
+      - name: is_detour
+        description: "True if the disruption is a trip detour"
+        data_tests: [not_null]
+      - name: is_reduced_service
+        description: "True if the disruption is a reduction of the service"
+        data_tests: [not_null]
+      - name: is_delayed
+        description: "True if the disruption is a delayed trip"
+        data_tests: [not_null]
+      - name: is_station_declared
+        description: "True if the station is listed among the stations of the disruption"
+        data_tests: [not_null]
+      - name: is_within_period
+        description: "True if the scheduled time of the passage falls within one of the periods of the disruption"
+        data_tests: [not_null]
+      - name: is_effective
+        description: "True if the disruption actually affects the passage: not an additional service, and either a cancellation, or the passage is within a period that impacts a trip at a given station or an entire line or network"
+        data_tests: [not_null]
+
+  - name: int_flux_flagged
+    description: "One row per trip and station (same rows as int_flux_deduplicated) with disruption flags aggregated from int_flux_disruptions."
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [trip_id, station_id]
+      - dbt_utils.equal_rowcount:
+          arguments:
+            compare_model: ref('int_flux_deduplicated')
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "is_disrupted = (nb_disruptions > 0)"
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "not is_canceled or is_disrupted"
+      - dbt_utils.expression_is_true:
+          description: "Makes sure that all is_modified, is_detour, is_reduced_service, is_delayed cannot be false at the same time while is_disrupted is true (due to their construction)"
+          arguments:
+            expression: "not (is_modified or is_detour or is_reduced_service or is_delayed) or is_disrupted"
+      - dbt_utils.expression_is_true:
+          description: "A passage that do not have a realtime update must have a delay = 0 or must be null (based on data at the time of the creation of the marts)"
+          arguments:
+            expression: "has_realtime_update or delay_min is null or delay_min = 0"
+          config:
+            severity: warn
+    columns:
+      - name: nb_disruptions
+        description: "Number of distinct effective disruptions affecting the passage"
+        data_tests: [not_null]
+      - name: is_disrupted
+        description: "True if at least one effective disruption affects the passage"
+        data_tests: [not_null]
+      - name: is_canceled
+        description: "True if the trip is canceled"
+        data_tests: [not_null]
+      - name: is_modified
+        description: "True if the trip is modified"
+        data_tests: [not_null]
+      - name: is_additional
+        description: "True if the trip is an additional service"
+        data_tests: [not_null]
+      - name: is_detour
+        description: "True if the trip is a detour"
+        data_tests: [not_null]
+      - name: is_reduced_service
+        description: "True if the trip is impacted by a reduction of the service"
+        data_tests: [not_null]
+      - name: is_delayed
+        description: "True if the trip is delayed"
+        data_tests: [not_null]
+      - name: has_trip_disruption
+        description: "True if an effective disruption affects the passage through its trip"
+        data_tests: [not_null]
+      - name: has_line_disruption
+        description: "True if an effective disruption affects the passage through its line"
+        data_tests: [not_null]
+      - name: has_network_disruption
+        description: "True if an effective disruption affects the passage through its network"
+        data_tests: [not_null]
+      - name: has_station_disruption
+        description: "True if an effective disruption affects the passage through its station (stop point)"
+        data_tests: [not_null]
+      - name: has_area_disruption
+        description: "True if an effective disruption affects the passage through its area (stop area)"
+        data_tests: [not_null]

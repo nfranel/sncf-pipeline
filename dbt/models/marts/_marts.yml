@@ -1,0 +1,160 @@
+version: 2
+
+models:
+  - name: mart_flux_daily
+    description: "Mart for obtaining daily information per area, station, physical mode, network and line, about the number of passages, disruptions of different kinds, and about the delays"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [service_date, area_id, station_id, physical_mode, network_id, line_id]
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "nb_passages_canceled <= nb_passages_disrupted and nb_passages_disrupted <= nb_passages"
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: >-
+              nb_delay_over_120min <= nb_delay_over_60min and nb_delay_over_60min <= nb_delay_over_30min
+              and nb_delay_over_30min <= nb_delay_over_10min and nb_delay_over_10min <= nb_delay_over_5min
+              and nb_delay_over_5min <= nb_delay_obs and nb_delay_obs <= nb_passages
+    columns:
+      - name: service_date
+        description: "Date at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: area_id
+        description: "Id of the area at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: station_id
+        description: "Id of the station at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: physical_mode
+        description: "Physical mode at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: network_id
+        description: "Id of the network at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: line_id
+        description: "Id of the line at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: area_name
+        description: "Name of the area at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: station_name
+        description: "Name of the station at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: line_name
+        description: "Name of the line at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: network_name
+        description: "Name of the network at which the passages are aggregated"
+        data_tests: [not_null]
+      - name: nb_passage_disruptions_pairs
+        description: "Daily number of passages-disruption pairs (combination of the disruptions and the stations impacted by it)"
+      - name: nb_passages
+        description: "Daily number of passages (Of a given trip in a given station)"
+      - name: nb_passages_disrupted
+        description: "Daily number of passages disrupted"
+      - name: nb_passages_canceled
+        description: "Daily number of passages canceled"
+      - name: nb_passages_modified
+        description: "Daily number of passages with a modified service"
+      - name: nb_passages_additional
+        description: "Daily number of passages that are additional services"
+      - name: nb_passages_detour
+        description: "Daily number of passages that are detours"
+      - name: nb_passages_reduced_service
+        description: "Daily number of passages that are impacted by a reduced service"
+      - name: nb_passages_delayed
+        description: "Daily number of passages that are delayed"
+      - name: nb_passages_realtime
+        description: "Daily number of passages that are realtime updates"
+      - name: nb_delay_over_5min
+        description: "Daily number of passages for which the delay is > 5min"
+      - name: nb_delay_over_10min
+        description: "Daily number of passages for which the delay is > 10min"
+      - name: nb_delay_over_30min
+        description: "Daily number of passages for which the delay is > 30min"
+      - name: nb_delay_over_60min
+        description: "Daily number of passages for which the delay is > 60min"
+      - name: nb_delay_over_120min
+        description: "Daily number of passages for which the delay is > 120min"
+      - name: nb_delay_obs
+        description: "Daily number of passages for which the delay is not null"
+      - name: sum_late_min
+        description: "Sum of the positive delay times (late passages only) each day"
+      - name: nb_delay_disrupted
+        description: "Daily number of disrupted passages for which the delay is not null"
+      - name: sum_late_min_disrupted
+        description: "Sum of the positive delay times (late passages only) each day for disrupted passages"
+      - name: nb_delay_realtime
+        description: "Daily number of realtime updated passages for which the delay is not null"
+      - name: nb_early_realtime
+        description: "Daily number of realtime updated passages for which the delay is < 0"
+      - name: nb_on_time_realtime
+        description: "Daily number of realtime updated passages for which the delay is = 0"
+      - name: nb_late_realtime
+        description: "Daily number of realtime updated passages for which the delay is > 0"
+      - name: sum_late_min_realtime
+        description: "Sum of the positive delay times (late passages only) each day for realtime updated passages"
+
+  - name: mart_disruption_daily
+    description: "Mart for obtaining daily information about disruptions per disruption severity, embedded type and status. Only disruptions impacting at least one of the passages collected are listed. A perturbation with two embedded types will appear for each type. The additional services are never effectives, as considered like new passages instead of actual disruptions. "
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [service_date, severity, embedded_type, status]
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "nb_effective_disruptions <= nb_disruptions"
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "nb_with_duration <= nb_disruptions"
+    columns:
+      - name: service_date
+        description: "Date at which the service is expected in Paris time zone"
+      - name: severity
+        description: "Severity of the disruption - trip modified, additional service, detour, reduced service, trip delayed, trip canceled"
+      - name: embedded_type
+        description: "Embedded_type of the disrupted object - network, commercial_mode, line, route, stop_area, stop_point, trip"
+      - name: status
+        description: "Actual status of the disruption - active, future or past"
+      - name: nb_disruptions
+        description: "Daily number of disruptions occurring"
+      - name: nb_effective_disruptions
+        description: "Daily number of disruptions occurring and that cause at least one effective disruption (among several trip_id and station_id)"
+      - name: nb_with_duration
+        description: "Daily number of disruptions occurring with a duration that is not null (start or end of the disruption periods summed being null)"
+      - name: sum_duration_min
+        description: "Sum of the disruption periods each day in minutes. The sum is calculated only with disruptions periods that are not null, so to obtain a mean, nb_with_duration should be used instead of nb_disruptions"
+
+  - name: mart_ingestion_coverage
+    description: "Mart for obtaining daily information on passages version, the stations, area, lines and network involved"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [service_date]
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "nb_single_version + nb_multiple_versions = nb_passages"
+    columns:
+      - name: nb_passages
+        description: "Daily number of passages"
+      - name: sum_number_versions
+        description: "Sum of the number of passage versions"
+      - name: nb_single_version
+        description: "Daily number of passages having only one version"
+      - name: nb_multiple_versions
+        description: "Daily number of passages having updated versions (more than one version)"
+      - name: nb_unique_trip
+        description: "Daily number of distinct trips"
+      - name: nb_unique_station
+        description: "Daily number of stations involved in trips"
+      - name: nb_unique_area
+        description: "Daily number of areas involved in trips"
+      - name: nb_unique_line
+        description: "Daily number of distinct lines in use"
+      - name: nb_unique_network
+        description: "Daily number of distinct networks in use"
+      - name: nb_passages_realtime
+        description: "Daily number of passages that are realtime updates (after deduplication due to updates)"
+      - name: nb_without_scheduled_time
+        description: "Daily number of passages without scheduled arrival and departure times"

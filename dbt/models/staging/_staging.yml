@@ -1,0 +1,225 @@
+version: 2
+
+models:
+  - name: stg_stop_areas
+    description: "Areas where vehicles stop, can correspond to one or more stations"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [area_id]
+    columns:
+      - name: area_id
+        description: "Id of the area"
+        data_tests: [not_null]
+      - name: area_name
+        description: "Name of the area"
+        data_tests: [not_null]
+      - name: area_longitude
+        description: "Longitude of the area"
+        data_tests: [not_null]
+      - name: area_latitude
+        description: "Latitude of the area"
+        data_tests: [not_null]
+
+  - name: stg_stations
+    description: "Stations where vehicles of a given physical mode stop"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [station_id]
+    columns:
+      - name: station_id
+        description: "Id of the station / stop point"
+        data_tests: [not_null]
+      - name: station_name
+        description: "Name of the station"
+        data_tests: [not_null]
+      - name: area_id
+        description: "Id of the area in which the station is"
+        data_tests: [not_null]
+
+  - name: stg_lines
+    description: "Lines used by the vehicles"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [line_id]
+    columns:
+      - name: line_id
+        description: "Id of the line"
+        data_tests: [not_null]
+      - name: line_name
+        description: "Name of the line"
+        data_tests: [not_null]
+
+  - name: stg_networks
+    description: "Networks handling the vehicles and trips"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [network_id]
+    columns:
+      - name: network_id
+        description: "Id of the network"
+        data_tests: [not_null]
+      - name: network_name
+        description: "Name of the network"
+        data_tests: [not_null]
+
+  - name: stg_disruptions
+    description: "Disruptions in a given trip, station, line"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [disruption_id]
+    columns:
+      - name: disruption_id
+        description: "Id of the disruption"
+        data_tests: [not_null]
+      - name: status
+        description: "Actual status of the disruption - active, future or past"
+        data_tests: [not_null]
+      - name: severity
+        description: "Severity of the disruption - trip modified, additional service, detour, reduced service, trip delayed, trip canceled"
+        data_tests:
+          - not_null
+          - accepted_values: # The values handled
+              arguments:
+                values: ["trip delayed", "additional service", "trip canceled",
+                         "reduced service", "trip modified", "detour"]
+              config:
+                severity: warn
+
+  - name: stg_disrupted_objects
+    description: "Information about objects encountering disruptions"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [disruption_id, object_id]
+    columns:
+      - name: disruption_id
+        description: "Id of the disruption impacting the object"
+        data_tests: [not_null]
+      - name: object_id
+        description: "Id of the disrupted object"
+        data_tests: [not_null]
+      - name: embedded_type
+        description: "Embedded_type of the disrupted object - network, commercial_mode, line, route, stop_area, stop_point, trip"
+        data_tests:
+          - not_null
+          - accepted_values: # The values expected according to the API documentation
+              arguments:
+                values: ["network", "commercial_mode", "line", "route", "stop_area", "stop_point", "trip"]
+          - accepted_values: # The values handled by the dbt transformations, only trip is allowed so far, code for network, line, stop_area, stop_point is commented as no data was available to test these cases. To be updated if such cases are met.
+              arguments:
+                values: ["trip"]
+              config:
+                severity: warn
+      - name: physical_mode
+        description: "Physical mode of the disrupted object - Obtained by stripping the end of the object_id. These can be different than the physical_mode from flux as they can represent modes like FERRE or ROUTIER when there are additional services."
+
+  - name: stg_disrupted_stations
+    description: "Stations where a disruption occurred (if the issue is in the station) or where a vehicle experiencing disruption is passing by"
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [disruption_id, station_id]
+    columns:
+      - name: disruption_id
+        description: "Id of the disruption impacting the station"
+        data_tests: [not_null]
+      - name: station_id
+        description: "Id of the disrupted station"
+        data_tests: [not_null]
+
+  - name: stg_disruption_periods
+    description: "Period(s) of time during which a given disruption is occurring"
+    data_tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "period_start is null or period_end is null or period_end >= period_start"
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [disruption_period_id]
+    columns:
+      - name: disruption_period_id
+        description: "Id of the disruption period"
+        data_tests: [not_null]
+      - name: disruption_id
+        description: "Id of the disruption"
+        data_tests: [not_null]
+      - name: period_start
+        description: "Start date of the disruption period, can be null"
+      - name: period_end
+        description: "End date of the disruption period, can be null"
+
+  - name: stg_flux
+    description: "Information on a vehicle trips (for a given course and station) "
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [vehicle_journey_id, station_id]
+    columns:
+      - name: vehicle_journey_id
+        description: "Id representing a given flux of a given vehicle in a given station"
+        data_tests: [not_null]
+      - name: station_id
+        description: "Id of the station"
+        data_tests: [not_null]      
+      - name: trip_id
+        description: "Id of the trip, reconstructed from the vehicle_journey_id"
+        data_tests: [not_null]
+      - name: origin_id
+        description: "Id of the origin station"
+        data_tests: [not_null]
+      - name: terminus_id
+        description: "Id of the terminus station"
+        data_tests: [not_null]
+      - name: line_id
+        description: "Id of the line"
+        data_tests: [not_null]
+      - name: network_id
+        description: "Id of the network"
+        data_tests: [not_null]
+      - name: physical_mode
+        description: "Physical mode of the flux - Bus, Coach, LongDistanceTrain, RailShuttle, RapidTransit, Train, Tramway"
+        data_tests: [not_null]
+      - name: scheduled_arrival_time
+        description: "Arrival time initially scheduled for the flux"
+      - name: actual_arrival_time
+        description: "Actual arrival time for the flux"
+      - name: scheduled_departure_time
+        description: "Departure time initially scheduled for the flux"
+      - name: actual_departure_time
+        description: "Actual departure time for the flux"
+      - name: arrival_delay_min
+        description: "Arrival delay in minutes (negative = early). A warning is given if the delay is greater than a day or earlier than an hour."
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -60
+                max_value: 1440
+              config:
+                severity: warn
+      - name: departure_delay_min
+        description: "Departure delay in minutes (negative = early). A warning is given if the delay is greater than a day or earlier than an hour."
+        data_tests:
+          - dbt_utils.accepted_range:
+              arguments:
+                min_value: -60
+                max_value: 1440
+              config:
+                severity: warn
+      - name: service_date
+        description: "Date at which the service is expected in Paris time zone"
+        data_tests: [not_null]
+      - name: service_hour
+        description: "Hour at which the service is expected in Paris time zone"
+        data_tests: [not_null]
+      - name: service_week_day
+        description: "Day of the week at which the service is expected in Paris time zone"
+        data_tests: [not_null]
+      - name: created_at
+        description: "Timestamp of the creation of the flux in the database"
+      - name: updated_at
+        description: "Timestamp of the update of the flux in the database, equal to created_at if there is no update"

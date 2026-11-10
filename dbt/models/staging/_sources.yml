@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: navitia_raw
+    description: "Raw results from the Navitia API, saved in JSONB"
+    schema: public
+    tables:
+      - name: raw_arrivals
+      - name: raw_departures
+      - name: raw_disruptions
+  
+  - name: navitia_structured
+    description: "Structured tables loaded with the upsert with airflow"
+    schema: public
+    tables:
+      - name: stations
+      - name: stop_areas
+      - name: lines
+      - name: networks
+      - name: disruptions
+      - name: disrupted_objects
+      - name: disrupted_stations
+      - name: disruption_periods
+      - name: flux
