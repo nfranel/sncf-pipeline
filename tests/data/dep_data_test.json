@@ -1,0 +1,2902 @@
+{
+    "pagination": {
+        "total_result": 117,
+        "start_page": 0,
+        "items_per_page": 1000,
+        "items_on_page": 117,
+        "result_fetched": 117
+    },
+    "feed_publishers": [
+        {
+            "id": "sncf",
+            "name": "SNCF PIV Production",
+            "url": "",
+            "license": "Private (unspecified)"
+        },
+        {
+            "id": "SNCF:sncf-piv",
+            "name": "SNCF PIV Production",
+            "url": "",
+            "license": "Private (unspecified)"
+        }
+    ],
+    "disruptions": [
+        {
+            "id": "852fd97b-304e-4dbf-bd7d-dec6d5e72193",
+            "disruption_id": "852fd97b-304e-4dbf-bd7d-dec6d5e72193",
+            "impact_id": "852fd97b-304e-4dbf-bd7d-dec6d5e72193",
+            "application_periods": [
+                {
+                    "begin": "20261010T135100",
+                    "end": "20261010T195800"
+                }
+            ],
+            "status": "active",
+            "updated_at": "20261010T134259",
+            "cause": "",
+            "severity": {
+                "name": "trip delayed",
+                "effect": "SIGNIFICANT_DELAYS",
+                "color": "#000000",
+                "priority": 42
+            },
+            "messages": [
+                {
+                    "text": "Incident lors de la préparation du train",
+                    "channel": {
+                        "content_type": "",
+                        "id": "rt",
+                        "name": "rt",
+                        "types": [
+                            "web",
+                            "mobile"
+                        ]
+                    }
+                }
+            ],
+            "impacted_objects": [
+                {
+                    "pt_object": {
+                        "id": "SNCF:2026-10-10:5454:1187:LongDistanceTrain",
+                        "name": "SNCF:2026-10-10:5454:1187:LongDistanceTrain",
+                        "quality": 0,
+                        "trip": {
+                            "id": "SNCF:2026-10-10:5454:1187:LongDistanceTrain",
+                            "name": "5454"
+                        },
+                        "embedded_type": "trip"
+                    },
+                    "impacted_stops": [
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87212027:LongDistanceTrain",
+                                "name": "Strasbourg",
+                                "label": "Strasbourg (Strasbourg)",
+                                "coord": {
+                                    "lon": "7.734793",
+                                    "lat": "48.584532"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "135100",
+                            "base_departure_time": "135100",
+                            "amended_arrival_time": "140100",
+                            "amended_departure_time": "140100",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "unchanged",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87142109:LongDistanceTrain",
+                                "name": "Lorraine TGV",
+                                "label": "Lorraine TGV (Louvigny)",
+                                "coord": {
+                                    "lon": "6.169778",
+                                    "lat": "48.947713"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "142700",
+                            "base_departure_time": "143000",
+                            "amended_arrival_time": "143700",
+                            "amended_departure_time": "144000",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87147322:LongDistanceTrain",
+                                "name": "Meuse TGV",
+                                "label": "Meuse TGV (Les Trois-Domaines)",
+                                "coord": {
+                                    "lon": "5.271024",
+                                    "lat": "48.978583"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "144800",
+                            "base_departure_time": "145100",
+                            "amended_arrival_time": "145800",
+                            "amended_departure_time": "150100",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87171926:LongDistanceTrain",
+                                "name": "Champagne-Ardenne TGV",
+                                "label": "Champagne-Ardenne TGV (Bezannes)",
+                                "coord": {
+                                    "lon": "3.994523",
+                                    "lat": "49.214769"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "151500",
+                            "base_departure_time": "151800",
+                            "amended_arrival_time": "152500",
+                            "amended_departure_time": "152800",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87271494:LongDistanceTrain",
+                                "name": "Aéroport Charles de Gaulle 2 TGV",
+                                "label": "Aéroport Charles de Gaulle 2 TGV (Tremblay-en-France)",
+                                "coord": {
+                                    "lon": "2.570812",
+                                    "lat": "49.003618"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "155000",
+                            "base_departure_time": "160500",
+                            "amended_arrival_time": "160000",
+                            "amended_departure_time": "161500",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87111849:LongDistanceTrain",
+                                "name": "Marne-la-Vallée - Chessy",
+                                "label": "Marne-la-Vallée - Chessy (Chessy)",
+                                "coord": {
+                                    "lon": "2.782626",
+                                    "lat": "48.869898"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "161700",
+                            "base_departure_time": "162200",
+                            "amended_arrival_time": "162700",
+                            "amended_departure_time": "163200",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87393702:LongDistanceTrain",
+                                "name": "Massy TGV",
+                                "label": "Massy TGV (Massy)",
+                                "coord": {
+                                    "lon": "2.261254",
+                                    "lat": "48.725758"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "165100",
+                            "base_departure_time": "165900",
+                            "amended_arrival_time": "170100",
+                            "amended_departure_time": "170900",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87571240:LongDistanceTrain",
+                                "name": "Saint-Pierre-des-Corps",
+                                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                                "coord": {
+                                    "lon": "0.723539",
+                                    "lat": "47.38614"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "175000",
+                            "base_departure_time": "175400",
+                            "amended_arrival_time": "180000",
+                            "amended_departure_time": "180400",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87575001:LongDistanceTrain",
+                                "name": "Poitiers",
+                                "label": "Poitiers (Poitiers)",
+                                "coord": {
+                                    "lon": "0.333136",
+                                    "lat": "46.582232"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "182400",
+                            "base_departure_time": "182800",
+                            "amended_arrival_time": "183400",
+                            "amended_departure_time": "183800",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87583005:LongDistanceTrain",
+                                "name": "Angoulême",
+                                "label": "Angoulême (Angoulême)",
+                                "coord": {
+                                    "lon": "0.164608",
+                                    "lat": "45.653572"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "190600",
+                            "base_departure_time": "190900",
+                            "amended_arrival_time": "191600",
+                            "amended_departure_time": "191900",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87581009:LongDistanceTrain",
+                                "name": "Bordeaux Saint-Jean",
+                                "label": "Bordeaux Saint-Jean (Bordeaux)",
+                                "coord": {
+                                    "lon": "-0.556697",
+                                    "lat": "44.825873"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "194800",
+                            "base_departure_time": "194800",
+                            "amended_arrival_time": "195800",
+                            "amended_departure_time": "195800",
+                            "cause": "Incident lors de la préparation du train",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "unchanged",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        }
+                    ]
+                }
+            ],
+            "uri": "852fd97b-304e-4dbf-bd7d-dec6d5e72193",
+            "disruption_uri": "852fd97b-304e-4dbf-bd7d-dec6d5e72193",
+            "contributor": "realtime.sncf.piv"
+        },
+        {
+            "id": "42a946f7-af57-4256-a2c6-09cb0906b9de",
+            "disruption_id": "42a946f7-af57-4256-a2c6-09cb0906b9de",
+            "impact_id": "42a946f7-af57-4256-a2c6-09cb0906b9de",
+            "application_periods": [
+                {
+                    "begin": "20261010T120100",
+                    "end": "20261010T181500"
+                }
+            ],
+            "status": "active",
+            "updated_at": "20261010T152041",
+            "cause": "",
+            "severity": {
+                "name": "additional service",
+                "effect": "ADDITIONAL_SERVICE",
+                "color": "#000000",
+                "priority": 42
+            },
+            "messages": [
+                {
+                    "text": "Affluence de voyageurs entraînant un arrêt prolongé",
+                    "channel": {
+                        "content_type": "",
+                        "id": "rt",
+                        "name": "rt",
+                        "types": [
+                            "web",
+                            "mobile"
+                        ]
+                    }
+                }
+            ],
+            "impacted_objects": [
+                {
+                    "pt_object": {
+                        "id": "PIV:REALTIME:2026-10-10:32507:1187:rail:highSpeedRail:FERRE",
+                        "name": "PIV:REALTIME:2026-10-10:32507:1187:rail:highSpeedRail:FERRE",
+                        "quality": 0,
+                        "trip": {
+                            "id": "PIV:REALTIME:2026-10-10:32507:1187:rail:highSpeedRail:FERRE",
+                            "name": "32507"
+                        },
+                        "embedded_type": "trip"
+                    },
+                    "impacted_stops": [
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87671339:Coach",
+                                "name": "Lourdes",
+                                "label": "Lourdes (Lourdes)",
+                                "coord": {
+                                    "lon": "-0.042186",
+                                    "lat": "43.100429"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "amended_arrival_time": "120100",
+                            "amended_departure_time": "120100",
+                            "cause": "",
+                            "stop_time_effect": "added",
+                            "departure_status": "added",
+                            "arrival_status": "added",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87571240:Coach",
+                                "name": "Saint-Pierre-des-Corps",
+                                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                                "coord": {
+                                    "lon": "0.723539",
+                                    "lat": "47.38614"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "amended_arrival_time": "164700",
+                            "amended_departure_time": "171000",
+                            "cause": "Affluence de voyageurs entraînant un arrêt prolongé",
+                            "stop_time_effect": "added",
+                            "departure_status": "added",
+                            "arrival_status": "added",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87391003:Bus",
+                                "name": "Paris - Montparnasse - Hall 1 & 2",
+                                "label": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                                "coord": {
+                                    "lon": "2.320514",
+                                    "lat": "48.841172"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "amended_arrival_time": "181500",
+                            "amended_departure_time": "181500",
+                            "cause": "Affluence de voyageurs entraînant un arrêt prolongé",
+                            "stop_time_effect": "added",
+                            "departure_status": "added",
+                            "arrival_status": "added",
+                            "is_detour": false
+                        }
+                    ]
+                }
+            ],
+            "uri": "42a946f7-af57-4256-a2c6-09cb0906b9de",
+            "disruption_uri": "42a946f7-af57-4256-a2c6-09cb0906b9de",
+            "contributor": "realtime.sncf.piv"
+        },
+        {
+            "id": "6da4aab8-69e0-40f1-b4fa-0b115d9c63a6",
+            "disruption_id": "6da4aab8-69e0-40f1-b4fa-0b115d9c63a6",
+            "impact_id": "6da4aab8-69e0-40f1-b4fa-0b115d9c63a6",
+            "application_periods": [
+                {
+                    "begin": "20261010T121900",
+                    "end": "20261010T181500"
+                }
+            ],
+            "status": "active",
+            "updated_at": "20261010T152041",
+            "cause": "",
+            "severity": {
+                "name": "additional service",
+                "effect": "ADDITIONAL_SERVICE",
+                "color": "#000000",
+                "priority": 42
+            },
+            "messages": [
+                {
+                    "text": "Affluence de voyageurs entraînant un arrêt prolongé",
+                    "channel": {
+                        "content_type": "",
+                        "id": "rt",
+                        "name": "rt",
+                        "types": [
+                            "web",
+                            "mobile"
+                        ]
+                    }
+                }
+            ],
+            "impacted_objects": [
+                {
+                    "pt_object": {
+                        "id": "PIV:REALTIME:2026-10-10:32513:1187:rail:highSpeedRail:FERRE",
+                        "name": "PIV:REALTIME:2026-10-10:32513:1187:rail:highSpeedRail:FERRE",
+                        "quality": 0,
+                        "trip": {
+                            "id": "PIV:REALTIME:2026-10-10:32513:1187:rail:highSpeedRail:FERRE",
+                            "name": "32513"
+                        },
+                        "embedded_type": "trip"
+                    },
+                    "impacted_stops": [
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87671339:Coach",
+                                "name": "Lourdes",
+                                "label": "Lourdes (Lourdes)",
+                                "coord": {
+                                    "lon": "-0.042186",
+                                    "lat": "43.100429"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "amended_arrival_time": "121900",
+                            "amended_departure_time": "121900",
+                            "cause": "",
+                            "stop_time_effect": "added",
+                            "departure_status": "added",
+                            "arrival_status": "added",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87571240:Coach",
+                                "name": "Saint-Pierre-des-Corps",
+                                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                                "coord": {
+                                    "lon": "0.723539",
+                                    "lat": "47.38614"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "amended_arrival_time": "164700",
+                            "amended_departure_time": "171000",
+                            "cause": "Affluence de voyageurs entraînant un arrêt prolongé",
+                            "stop_time_effect": "added",
+                            "departure_status": "added",
+                            "arrival_status": "added",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87391003:Bus",
+                                "name": "Paris - Montparnasse - Hall 1 & 2",
+                                "label": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                                "coord": {
+                                    "lon": "2.320514",
+                                    "lat": "48.841172"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "amended_arrival_time": "181500",
+                            "amended_departure_time": "181500",
+                            "cause": "Affluence de voyageurs entraînant un arrêt prolongé",
+                            "stop_time_effect": "added",
+                            "departure_status": "added",
+                            "arrival_status": "added",
+                            "is_detour": false
+                        }
+                    ]
+                }
+            ],
+            "uri": "6da4aab8-69e0-40f1-b4fa-0b115d9c63a6",
+            "disruption_uri": "6da4aab8-69e0-40f1-b4fa-0b115d9c63a6",
+            "contributor": "realtime.sncf.piv"
+        },
+        {
+            "id": "2e73883c-0be0-49bf-8dc8-f663663be516",
+            "disruption_id": "2e73883c-0be0-49bf-8dc8-f663663be516",
+            "impact_id": "2e73883c-0be0-49bf-8dc8-f663663be516",
+            "application_periods": [
+                {
+                    "begin": "20261010T173900",
+                    "end": "20261010T190400"
+                }
+            ],
+            "status": "future",
+            "updated_at": "20261010T164156",
+            "cause": "",
+            "severity": {
+                "name": "trip delayed",
+                "effect": "SIGNIFICANT_DELAYS",
+                "color": "#000000",
+                "priority": 42
+            },
+            "messages": [
+                {
+                    "text": "Prise en charge de clients en correspondance",
+                    "channel": {
+                        "content_type": "",
+                        "id": "rt",
+                        "name": "rt",
+                        "types": [
+                            "web",
+                            "mobile"
+                        ]
+                    }
+                }
+            ],
+            "impacted_objects": [
+                {
+                    "pt_object": {
+                        "id": "SNCF:2026-10-10:860229:1187:Train",
+                        "name": "SNCF:2026-10-10:860229:1187:Train",
+                        "quality": 0,
+                        "trip": {
+                            "id": "SNCF:2026-10-10:860229:1187:Train",
+                            "name": "860229"
+                        },
+                        "embedded_type": "trip"
+                    },
+                    "impacted_stops": [
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87543017:Train",
+                                "name": "Les Aubrais",
+                                "label": "Les Aubrais (Fleury-les-Aubrais)",
+                                "coord": {
+                                    "lon": "1.906629",
+                                    "lat": "47.926801"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "173900",
+                            "base_departure_time": "173900",
+                            "amended_arrival_time": "174400",
+                            "amended_departure_time": "174400",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "unchanged",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87574137:Train",
+                                "name": "Meung-sur-Loire",
+                                "label": "Meung-sur-Loire (Meung-sur-Loire)",
+                                "coord": {
+                                    "lon": "1.691921",
+                                    "lat": "47.829954"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "175000",
+                            "base_departure_time": "175100",
+                            "amended_arrival_time": "175500",
+                            "amended_departure_time": "175600",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87574160:Train",
+                                "name": "Beaugency",
+                                "label": "Beaugency (Beaugency)",
+                                "coord": {
+                                    "lon": "1.625944",
+                                    "lat": "47.778404"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "175600",
+                            "base_departure_time": "175700",
+                            "amended_arrival_time": "180100",
+                            "amended_departure_time": "180200",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87574194:Train",
+                                "name": "Mer",
+                                "label": "Mer (Mer)",
+                                "coord": {
+                                    "lon": "1.506363",
+                                    "lat": "47.705894"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "180400",
+                            "base_departure_time": "180500",
+                            "amended_arrival_time": "180900",
+                            "amended_departure_time": "181000",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87574004:Train",
+                                "name": "Blois - Chambord",
+                                "label": "Blois - Chambord (Blois)",
+                                "coord": {
+                                    "lon": "1.323759",
+                                    "lat": "47.585449"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "181500",
+                            "base_departure_time": "181700",
+                            "amended_arrival_time": "182000",
+                            "amended_departure_time": "182200",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87574319:Train",
+                                "name": "Onzain - Chaumont-sur-Loire",
+                                "label": "Onzain - Chaumont-sur-Loire (Veuzain-sur-Loire)",
+                                "coord": {
+                                    "lon": "1.18595",
+                                    "lat": "47.492"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "182500",
+                            "base_departure_time": "182600",
+                            "amended_arrival_time": "183000",
+                            "amended_departure_time": "183100",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87574343:Train",
+                                "name": "Amboise",
+                                "label": "Amboise (Amboise)",
+                                "coord": {
+                                    "lon": "0.981267",
+                                    "lat": "47.421469"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "183500",
+                            "base_departure_time": "183600",
+                            "amended_arrival_time": "184000",
+                            "amended_departure_time": "184100",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87571273:Train",
+                                "name": "Montlouis",
+                                "label": "Montlouis (Montlouis-sur-Loire)",
+                                "coord": {
+                                    "lon": "0.817476",
+                                    "lat": "47.391564"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "184400",
+                            "base_departure_time": "184500",
+                            "amended_arrival_time": "184900",
+                            "amended_departure_time": "185000",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87571240:Train",
+                                "name": "Saint-Pierre-des-Corps",
+                                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                                "coord": {
+                                    "lon": "0.723539",
+                                    "lat": "47.38614"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "185100",
+                            "base_departure_time": "185300",
+                            "amended_arrival_time": "185600",
+                            "amended_departure_time": "185800",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "delayed",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        },
+                        {
+                            "stop_point": {
+                                "id": "stop_point:SNCF:87571000:Train",
+                                "name": "Tours",
+                                "label": "Tours (Tours)",
+                                "coord": {
+                                    "lon": "0.693638",
+                                    "lat": "47.389694"
+                                },
+                                "links": [],
+                                "equipments": []
+                            },
+                            "base_arrival_time": "185900",
+                            "base_departure_time": "185900",
+                            "amended_arrival_time": "190400",
+                            "amended_departure_time": "190400",
+                            "cause": "Prise en charge de clients en correspondance",
+                            "stop_time_effect": "delayed",
+                            "departure_status": "unchanged",
+                            "arrival_status": "delayed",
+                            "is_detour": false
+                        }
+                    ]
+                }
+            ],
+            "uri": "2e73883c-0be0-49bf-8dc8-f663663be516",
+            "disruption_uri": "2e73883c-0be0-49bf-8dc8-f663663be516",
+            "contributor": "realtime.sncf.piv"
+        }
+    ],
+    "origins": [
+        {
+            "id": "stop_area:SNCF:87574475",
+            "name": "Bléré - La Croix",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87574475"
+                },
+                {
+                    "type": "uic",
+                    "value": "87574475"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Bléré - La Croix (La Croix-en-Touraine)",
+            "coord": {
+                "lon": "0.987745",
+                "lat": "47.337741"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87581009",
+            "name": "Bordeaux Saint-Jean",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87581009"
+                },
+                {
+                    "type": "uic",
+                    "value": "87581009"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Bordeaux Saint-Jean (Bordeaux)",
+            "coord": {
+                "lon": "-0.556697",
+                "lat": "44.825873"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87444000",
+            "name": "Caen",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87444000"
+                },
+                {
+                    "type": "uic",
+                    "value": "87444000"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Caen (Caen)",
+            "coord": {
+                "lon": "-0.347613",
+                "lat": "49.176354"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87571687",
+            "name": "Chinon",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87571687"
+                },
+                {
+                    "type": "uic",
+                    "value": "87571687"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Chinon (Chinon)",
+            "coord": {
+                "lon": "0.251645",
+                "lat": "47.163073"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87485003",
+            "name": "La Rochelle",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87485003"
+                },
+                {
+                    "type": "uic",
+                    "value": "87485003"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "La Rochelle (La Rochelle)",
+            "coord": {
+                "lon": "-1.145853",
+                "lat": "46.152705"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87481788",
+            "name": "Le Croisic",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87481788"
+                },
+                {
+                    "type": "uic",
+                    "value": "87481788"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Le Croisic (Le Croisic)",
+            "coord": {
+                "lon": "-2.50734",
+                "lat": "47.289889"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87543017",
+            "name": "Les Aubrais",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87543017"
+                },
+                {
+                    "type": "uic",
+                    "value": "87543017"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Les Aubrais (Fleury-les-Aubrais)",
+            "coord": {
+                "lon": "1.906629",
+                "lat": "47.926801"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87286005",
+            "name": "Lille Flandres",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87286005"
+                },
+                {
+                    "type": "uic",
+                    "value": "87286005"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Lille Flandres (Lille)",
+            "coord": {
+                "lon": "3.06987",
+                "lat": "50.636577"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87671339",
+            "name": "Lourdes",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87671339"
+                },
+                {
+                    "type": "uic",
+                    "value": "87671339"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Lourdes (Lourdes)",
+            "coord": {
+                "lon": "-0.042186",
+                "lat": "43.100429"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87722025",
+            "name": "Lyon Perrache",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87722025"
+                },
+                {
+                    "type": "uic",
+                    "value": "87722025"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Lyon Perrache (Lyon)",
+            "coord": {
+                "lon": "4.825777",
+                "lat": "45.748508"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87688887",
+            "name": "Montpellier Sud de France",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87688887"
+                },
+                {
+                    "type": "uic",
+                    "value": "87688887"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Montpellier Sud de France (Montpellier)",
+            "coord": {
+                "lon": "3.924009",
+                "lat": "43.595146"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87481002",
+            "name": "Nantes",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87481002"
+                },
+                {
+                    "type": "uic",
+                    "value": "87481002"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Nantes (Nantes)",
+            "coord": {
+                "lon": "-1.542077",
+                "lat": "47.217491"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87696005",
+            "name": "Nevers",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87696005"
+                },
+                {
+                    "type": "uic",
+                    "value": "87696005"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Nevers (Nevers)",
+            "coord": {
+                "lon": "3.150743",
+                "lat": "46.987282"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87543009",
+            "name": "Orléans",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87543009"
+                },
+                {
+                    "type": "uic",
+                    "value": "87543009"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Orléans (Orléans)",
+            "coord": {
+                "lon": "1.904242",
+                "lat": "47.907891"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87391003",
+            "name": "Paris - Montparnasse - Hall 1 & 2",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87391003"
+                },
+                {
+                    "type": "uic",
+                    "value": "87391003"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+            "coord": {
+                "lon": "2.320514",
+                "lat": "48.841172"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87547000",
+            "name": "Paris Austerlitz",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87547000"
+                },
+                {
+                    "type": "uic",
+                    "value": "87547000"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Paris Austerlitz (Paris)",
+            "coord": {
+                "lon": "2.364891",
+                "lat": "48.842285"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87575001",
+            "name": "Poitiers",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87575001"
+                },
+                {
+                    "type": "uic",
+                    "value": "87575001"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Poitiers (Poitiers)",
+            "coord": {
+                "lon": "0.333136",
+                "lat": "46.582232"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87574897",
+            "name": "Saint-Aignan - Noyers",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87574897"
+                },
+                {
+                    "type": "uic",
+                    "value": "87574897"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Saint-Aignan - Noyers (Noyers-sur-Cher)",
+            "coord": {
+                "lon": "1.383626",
+                "lat": "47.286724"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87571240",
+            "name": "Saint-Pierre-des-Corps",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87571240"
+                },
+                {
+                    "type": "uic",
+                    "value": "87571240"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+            "coord": {
+                "lon": "0.723539",
+                "lat": "47.38614"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87212027",
+            "name": "Strasbourg",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87212027"
+                },
+                {
+                    "type": "uic",
+                    "value": "87212027"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Strasbourg (Strasbourg)",
+            "coord": {
+                "lon": "7.734793",
+                "lat": "48.584532"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87286542",
+            "name": "Tourcoing",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87286542"
+                },
+                {
+                    "type": "uic",
+                    "value": "87286542"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Tourcoing (Tourcoing)",
+            "coord": {
+                "lon": "3.168027",
+                "lat": "50.716826"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87571000",
+            "name": "Tours",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87571000"
+                },
+                {
+                    "type": "uic",
+                    "value": "87571000"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Tours (Tours)",
+            "coord": {
+                "lon": "0.693638",
+                "lat": "47.389694"
+            },
+            "links": []
+        }
+    ],
+    "terminus": [
+        {
+            "id": "stop_area:SNCF:87574475",
+            "name": "Bléré - La Croix",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87574475"
+                },
+                {
+                    "type": "uic",
+                    "value": "87574475"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Bléré - La Croix (La Croix-en-Touraine)",
+            "coord": {
+                "lon": "0.987745",
+                "lat": "47.337741"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87574004",
+            "name": "Blois - Chambord",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87574004"
+                },
+                {
+                    "type": "uic",
+                    "value": "87574004"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Blois - Chambord (Blois)",
+            "coord": {
+                "lon": "1.323759",
+                "lat": "47.585449"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87581009",
+            "name": "Bordeaux Saint-Jean",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87581009"
+                },
+                {
+                    "type": "uic",
+                    "value": "87581009"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Bordeaux Saint-Jean (Bordeaux)",
+            "coord": {
+                "lon": "-0.556697",
+                "lat": "44.825873"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87576207",
+            "name": "Bourges",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87576207"
+                },
+                {
+                    "type": "uic",
+                    "value": "87576207"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Bourges (Bourges)",
+            "coord": {
+                "lon": "2.394236",
+                "lat": "47.094129"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87444000",
+            "name": "Caen",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87444000"
+                },
+                {
+                    "type": "uic",
+                    "value": "87444000"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Caen (Caen)",
+            "coord": {
+                "lon": "-0.347613",
+                "lat": "49.176354"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87571687",
+            "name": "Chinon",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87571687"
+                },
+                {
+                    "type": "uic",
+                    "value": "87571687"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Chinon (Chinon)",
+            "coord": {
+                "lon": "0.251645",
+                "lat": "47.163073"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87486019",
+            "name": "La Roche-sur-Yon",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87486019"
+                },
+                {
+                    "type": "uic",
+                    "value": "87486019"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "La Roche-sur-Yon (La Roche-sur-Yon)",
+            "coord": {
+                "lon": "-1.43566",
+                "lat": "46.672075"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87485003",
+            "name": "La Rochelle",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87485003"
+                },
+                {
+                    "type": "uic",
+                    "value": "87485003"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "La Rochelle (La Rochelle)",
+            "coord": {
+                "lon": "-1.145853",
+                "lat": "46.152705"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87481788",
+            "name": "Le Croisic",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87481788"
+                },
+                {
+                    "type": "uic",
+                    "value": "87481788"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Le Croisic (Le Croisic)",
+            "coord": {
+                "lon": "-2.50734",
+                "lat": "47.289889"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87223263",
+            "name": "Lille Europe",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87223263"
+                },
+                {
+                    "type": "uic",
+                    "value": "87223263"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Lille Europe (Lille)",
+            "coord": {
+                "lon": "3.075721",
+                "lat": "50.6394"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87286005",
+            "name": "Lille Flandres",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87286005"
+                },
+                {
+                    "type": "uic",
+                    "value": "87286005"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Lille Flandres (Lille)",
+            "coord": {
+                "lon": "3.06987",
+                "lat": "50.636577"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87722025",
+            "name": "Lyon Perrache",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87722025"
+                },
+                {
+                    "type": "uic",
+                    "value": "87722025"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Lyon Perrache (Lyon)",
+            "coord": {
+                "lon": "4.825777",
+                "lat": "45.748508"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87688887",
+            "name": "Montpellier Sud de France",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87688887"
+                },
+                {
+                    "type": "uic",
+                    "value": "87688887"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Montpellier Sud de France (Montpellier)",
+            "coord": {
+                "lon": "3.924009",
+                "lat": "43.595146"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87481002",
+            "name": "Nantes",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87481002"
+                },
+                {
+                    "type": "uic",
+                    "value": "87481002"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Nantes (Nantes)",
+            "coord": {
+                "lon": "-1.542077",
+                "lat": "47.217491"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87696005",
+            "name": "Nevers",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87696005"
+                },
+                {
+                    "type": "uic",
+                    "value": "87696005"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Nevers (Nevers)",
+            "coord": {
+                "lon": "3.150743",
+                "lat": "46.987282"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87543009",
+            "name": "Orléans",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87543009"
+                },
+                {
+                    "type": "uic",
+                    "value": "87543009"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Orléans (Orléans)",
+            "coord": {
+                "lon": "1.904242",
+                "lat": "47.907891"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87694687",
+            "name": "Paray-le-Monial",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87694687"
+                },
+                {
+                    "type": "uic",
+                    "value": "87694687"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Paray-le-Monial (Paray-le-Monial)",
+            "coord": {
+                "lon": "4.113666",
+                "lat": "46.447294"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87391003",
+            "name": "Paris - Montparnasse - Hall 1 & 2",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87391003"
+                },
+                {
+                    "type": "uic",
+                    "value": "87391003"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+            "coord": {
+                "lon": "2.320514",
+                "lat": "48.841172"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87547000",
+            "name": "Paris Austerlitz",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87547000"
+                },
+                {
+                    "type": "uic",
+                    "value": "87547000"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Paris Austerlitz (Paris)",
+            "coord": {
+                "lon": "2.364891",
+                "lat": "48.842285"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87575001",
+            "name": "Poitiers",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87575001"
+                },
+                {
+                    "type": "uic",
+                    "value": "87575001"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Poitiers (Poitiers)",
+            "coord": {
+                "lon": "0.333136",
+                "lat": "46.582232"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87574897",
+            "name": "Saint-Aignan - Noyers",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87574897"
+                },
+                {
+                    "type": "uic",
+                    "value": "87574897"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Saint-Aignan - Noyers (Noyers-sur-Cher)",
+            "coord": {
+                "lon": "1.383626",
+                "lat": "47.286724"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87212027",
+            "name": "Strasbourg",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87212027"
+                },
+                {
+                    "type": "uic",
+                    "value": "87212027"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Strasbourg (Strasbourg)",
+            "coord": {
+                "lon": "7.734793",
+                "lat": "48.584532"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87286542",
+            "name": "Tourcoing",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87286542"
+                },
+                {
+                    "type": "uic",
+                    "value": "87286542"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Tourcoing (Tourcoing)",
+            "coord": {
+                "lon": "3.168027",
+                "lat": "50.716826"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87571000",
+            "name": "Tours",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87571000"
+                },
+                {
+                    "type": "uic",
+                    "value": "87571000"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Tours (Tours)",
+            "coord": {
+                "lon": "0.693638",
+                "lat": "47.389694"
+            },
+            "links": []
+        },
+        {
+            "id": "stop_area:SNCF:87576009",
+            "name": "Vierzon",
+            "codes": [
+                {
+                    "type": "source",
+                    "value": "87576009"
+                },
+                {
+                    "type": "uic",
+                    "value": "87576009"
+                }
+            ],
+            "timezone": "Europe/Paris",
+            "label": "Vierzon (Vierzon)",
+            "coord": {
+                "lon": "2.059869",
+                "lat": "47.226474"
+            },
+            "links": []
+        }
+    ],
+    "context": {
+        "current_datetime": "20261010T165035",
+        "timezone": "Europe/Paris"
+    },
+    "departures": [
+        {
+            "route": {
+                "id": "route:SNCF:FR:Line::0B0B302C-2E5D-4AB4-BE84-4DA893F7C926:",
+                "name": "P17",
+                "is_frequence": "False",
+                "direction_type": "forward",
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:Train",
+                        "name": "TER / Intercités"
+                    }
+                ],
+                "direction": {
+                    "id": "stop_area:SNCF:87571000",
+                    "name": "Tours (Tours)",
+                    "quality": 0,
+                    "stop_area": {
+                        "id": "stop_area:SNCF:87571000",
+                        "name": "Tours",
+                        "codes": [
+                            {
+                                "type": "source",
+                                "value": "87571000"
+                            },
+                            {
+                                "type": "uic",
+                                "value": "87571000"
+                            }
+                        ],
+                        "timezone": "Europe/Paris",
+                        "label": "Tours (Tours)",
+                        "coord": {
+                            "lon": "0.693638",
+                            "lat": "47.389694"
+                        },
+                        "links": []
+                    },
+                    "embedded_type": "stop_area"
+                },
+                "geojson": {
+                    "type": "MultiLineString",
+                    "coordinates": []
+                },
+                "links": [],
+                "line": {
+                    "id": "line:SNCF:FR:Line::0B0B302C-2E5D-4AB4-BE84-4DA893F7C926:",
+                    "name": "P17",
+                    "code": "P17",
+                    "color": "",
+                    "text_color": "",
+                    "codes": [],
+                    "physical_modes": [
+                        {
+                            "id": "physical_mode:Train",
+                            "name": "TER / Intercités"
+                        }
+                    ],
+                    "commercial_mode": {
+                        "id": "commercial_mode:FR:Branding::d5d601cf-e383-4138-8e70-ee1b7fcadd48:",
+                        "name": "Rémi"
+                    },
+                    "network": {
+                        "id": "network:SNCF:FR:Branding::d5d601cf-e383-4138-8e70-ee1b7fcadd48:",
+                        "name": "Rémi",
+                        "links": []
+                    },
+                    "opening_time": "063200",
+                    "closing_time": "210900",
+                    "geojson": {
+                        "type": "MultiLineString",
+                        "coordinates": []
+                    },
+                    "links": []
+                }
+            },
+            "stop_point": {
+                "id": "stop_point:SNCF:87571240:Train",
+                "name": "Saint-Pierre-des-Corps",
+                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                "coord": {
+                    "lon": "0.723539",
+                    "lat": "47.38614"
+                },
+                "links": [],
+                "commercial_modes": [
+                    {
+                        "id": "commercial_mode:FR:Branding::8c1ce319-d566-4575-a416-a46730280ce5:",
+                        "name": "Rémi Exp"
+                    },
+                    {
+                        "id": "commercial_mode:FR:Branding::d5d601cf-e383-4138-8e70-ee1b7fcadd48:",
+                        "name": "Rémi"
+                    }
+                ],
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:Train",
+                        "name": "TER / Intercités",
+                        "co2_emission_rate": {
+                            "value": 11.9,
+                            "unit": "gEC/Km"
+                        }
+                    }
+                ],
+                "administrative_regions": [
+                    {
+                        "id": "admin:fr:37233",
+                        "name": "Saint-Pierre-des-Corps",
+                        "level": 8,
+                        "zip_code": "37700",
+                        "label": "Saint-Pierre-des-Corps (37700)",
+                        "insee": "37233",
+                        "coord": {
+                            "lon": "0.7189761",
+                            "lat": "47.3898152"
+                        }
+                    }
+                ],
+                "stop_area": {
+                    "id": "stop_area:SNCF:87571240",
+                    "name": "Saint-Pierre-des-Corps",
+                    "codes": [
+                        {
+                            "type": "source",
+                            "value": "87571240"
+                        },
+                        {
+                            "type": "uic",
+                            "value": "87571240"
+                        }
+                    ],
+                    "timezone": "Europe/Paris",
+                    "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                    "coord": {
+                        "lon": "0.723539",
+                        "lat": "47.38614"
+                    },
+                    "links": [],
+                    "administrative_regions": [
+                        {
+                            "id": "admin:fr:37233",
+                            "name": "Saint-Pierre-des-Corps",
+                            "level": 8,
+                            "zip_code": "37700",
+                            "label": "Saint-Pierre-des-Corps (37700)",
+                            "insee": "37233",
+                            "coord": {
+                                "lon": "0.7189761",
+                                "lat": "47.3898152"
+                            }
+                        }
+                    ]
+                },
+                "equipments": []
+            },
+            "stop_date_time": {
+                "departure_date_time": "20261010T165700",
+                "base_departure_date_time": "20261010T165700",
+                "arrival_date_time": "20261010T165500",
+                "base_arrival_date_time": "20261010T165500",
+                "additional_informations": [],
+                "links": [
+                    {
+                        "type": "stop_area",
+                        "rel": "origins",
+                        "category": "origin",
+                        "id": "stop_area:SNCF:87574897",
+                        "internal": true
+                    },
+                    {
+                        "type": "stop_area",
+                        "rel": "terminus",
+                        "category": "terminus",
+                        "id": "stop_area:SNCF:87571000",
+                        "internal": true
+                    }
+                ],
+                "data_freshness": "base_schedule"
+            },
+            "display_informations": {
+                "commercial_mode": "Rémi",
+                "network": "Rémi",
+                "direction": "Tours (Tours)",
+                "label": "P17",
+                "color": "",
+                "code": "P17",
+                "headsign": "860739",
+                "name": "P17",
+                "links": [
+                    {
+                        "templated": false,
+                        "rel": "origins",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87574897",
+                        "category": "origin"
+                    },
+                    {
+                        "templated": false,
+                        "rel": "terminus",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87571000",
+                        "category": "terminus"
+                    }
+                ],
+                "text_color": "",
+                "trip_short_name": "860739",
+                "company": "SNCF Voyageurs",
+                "description": "",
+                "physical_mode": "TER / Intercités",
+                "equipments": []
+            },
+            "links": [
+                {
+                    "type": "line",
+                    "id": "line:SNCF:FR:Line::0B0B302C-2E5D-4AB4-BE84-4DA893F7C926:"
+                },
+                {
+                    "type": "company",
+                    "id": "company:SNCF:1187"
+                },
+                {
+                    "type": "vehicle_journey",
+                    "id": "vehicle_journey:SNCF:2026-10-10:860739:1187:Train"
+                },
+                {
+                    "type": "route",
+                    "id": "route:SNCF:FR:Line::0B0B302C-2E5D-4AB4-BE84-4DA893F7C926:"
+                },
+                {
+                    "type": "commercial_mode",
+                    "id": "commercial_mode:FR:Branding::d5d601cf-e383-4138-8e70-ee1b7fcadd48:"
+                },
+                {
+                    "type": "physical_mode",
+                    "id": "physical_mode:Train"
+                },
+                {
+                    "type": "network",
+                    "id": "network:SNCF:FR:Branding::d5d601cf-e383-4138-8e70-ee1b7fcadd48:"
+                }
+            ]
+        },
+        {
+            "route": {
+                "id": "route:stop_area:SNCF:87671339_stop_area:SNCF:87391003",
+                "name": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                "is_frequence": "False",
+                "direction_type": "forward",
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:LongDistanceTrain",
+                        "name": "Train grande vitesse"
+                    }
+                ],
+                "direction": {
+                    "id": "stop_area:SNCF:87391003",
+                    "name": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                    "quality": 0,
+                    "stop_area": {
+                        "id": "stop_area:SNCF:87391003",
+                        "name": "Paris - Montparnasse - Hall 1 & 2",
+                        "codes": [
+                            {
+                                "type": "source",
+                                "value": "87391003"
+                            },
+                            {
+                                "type": "uic",
+                                "value": "87391003"
+                            }
+                        ],
+                        "timezone": "Europe/Paris",
+                        "label": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                        "coord": {
+                            "lon": "2.320514",
+                            "lat": "48.841172"
+                        },
+                        "links": []
+                    },
+                    "embedded_type": "stop_area"
+                },
+                "geojson": {
+                    "type": "MultiLineString",
+                    "coordinates": []
+                },
+                "links": [],
+                "line": {
+                    "id": "line:stop_area:SNCF:87671339_stop_area:SNCF:87391003",
+                    "name": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                    "code": "",
+                    "color": "000000",
+                    "text_color": "FFFFFF",
+                    "codes": [],
+                    "physical_modes": [
+                        {
+                            "id": "physical_mode:LongDistanceTrain",
+                            "name": "Train grande vitesse"
+                        }
+                    ],
+                    "commercial_mode": {
+                        "id": "commercial_mode:additional_service",
+                        "name": "additional service"
+                    },
+                    "network": {
+                        "id": "network:additional_service",
+                        "name": "additional service",
+                        "links": []
+                    },
+                    "geojson": {
+                        "type": "MultiLineString",
+                        "coordinates": []
+                    },
+                    "links": []
+                }
+            },
+            "stop_point": {
+                "id": "stop_point:SNCF:87571240:Coach",
+                "name": "Saint-Pierre-des-Corps",
+                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                "coord": {
+                    "lon": "0.723539",
+                    "lat": "47.38614"
+                },
+                "links": [],
+                "commercial_modes": [
+                    {
+                        "id": "commercial_mode:FR:Branding::8c1ce319-d566-4575-a416-a46730280ce5:",
+                        "name": "Rémi Exp"
+                    },
+                    {
+                        "id": "commercial_mode:FR:Branding::d5d601cf-e383-4138-8e70-ee1b7fcadd48:",
+                        "name": "Rémi"
+                    },
+                    {
+                        "id": "commercial_mode:additional_service",
+                        "name": "additional service"
+                    }
+                ],
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:Coach",
+                        "name": "Autocar",
+                        "co2_emission_rate": {
+                            "value": 171.0,
+                            "unit": "gEC/Km"
+                        }
+                    },
+                    {
+                        "id": "physical_mode:LongDistanceTrain",
+                        "name": "Train grande vitesse",
+                        "co2_emission_rate": {
+                            "value": 2.36,
+                            "unit": "gEC/Km"
+                        }
+                    }
+                ],
+                "administrative_regions": [
+                    {
+                        "id": "admin:fr:37233",
+                        "name": "Saint-Pierre-des-Corps",
+                        "level": 8,
+                        "zip_code": "37700",
+                        "label": "Saint-Pierre-des-Corps (37700)",
+                        "insee": "37233",
+                        "coord": {
+                            "lon": "0.7189761",
+                            "lat": "47.3898152"
+                        }
+                    }
+                ],
+                "stop_area": {
+                    "id": "stop_area:SNCF:87571240",
+                    "name": "Saint-Pierre-des-Corps",
+                    "codes": [
+                        {
+                            "type": "source",
+                            "value": "87571240"
+                        },
+                        {
+                            "type": "uic",
+                            "value": "87571240"
+                        }
+                    ],
+                    "timezone": "Europe/Paris",
+                    "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                    "coord": {
+                        "lon": "0.723539",
+                        "lat": "47.38614"
+                    },
+                    "links": [],
+                    "administrative_regions": [
+                        {
+                            "id": "admin:fr:37233",
+                            "name": "Saint-Pierre-des-Corps",
+                            "level": 8,
+                            "zip_code": "37700",
+                            "label": "Saint-Pierre-des-Corps (37700)",
+                            "insee": "37233",
+                            "coord": {
+                                "lon": "0.7189761",
+                                "lat": "47.3898152"
+                            }
+                        }
+                    ]
+                },
+                "equipments": []
+            },
+            "stop_date_time": {
+                "departure_date_time": "20261010T171000",
+                "arrival_date_time": "20261010T164700",
+                "additional_informations": [],
+                "links": [
+                    {
+                        "type": "stop_area",
+                        "rel": "origins",
+                        "category": "origin",
+                        "id": "stop_area:SNCF:87671339",
+                        "internal": true
+                    },
+                    {
+                        "type": "stop_area",
+                        "rel": "terminus",
+                        "category": "terminus",
+                        "id": "stop_area:SNCF:87391003",
+                        "internal": true
+                    }
+                ],
+                "data_freshness": "realtime"
+            },
+            "display_informations": {
+                "commercial_mode": "additional service",
+                "network": "additional service",
+                "direction": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                "label": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                "color": "000000",
+                "code": "",
+                "headsign": "32513",
+                "name": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                "links": [
+                    {
+                        "templated": false,
+                        "rel": "disruptions",
+                        "internal": true,
+                        "type": "disruption",
+                        "id": "6da4aab8-69e0-40f1-b4fa-0b115d9c63a6"
+                    },
+                    {
+                        "templated": false,
+                        "rel": "origins",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87671339",
+                        "category": "origin"
+                    },
+                    {
+                        "templated": false,
+                        "rel": "terminus",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87391003",
+                        "category": "terminus"
+                    }
+                ],
+                "text_color": "FFFFFF",
+                "trip_short_name": "32513",
+                "company": "SNCF Voyageurs",
+                "description": "",
+                "physical_mode": "Train grande vitesse",
+                "equipments": []
+            },
+            "links": [
+                {
+                    "type": "line",
+                    "id": "line:stop_area:SNCF:87671339_stop_area:SNCF:87391003"
+                },
+                {
+                    "type": "company",
+                    "id": "company:SNCF:1187"
+                },
+                {
+                    "type": "vehicle_journey",
+                    "id": "vehicle_journey:PIV:REALTIME:2026-10-10:32513:1187:rail:highSpeedRail:FERRE:RealTime:dd4226fa-931a-4406-bb42-bf2427a0381c"
+                },
+                {
+                    "type": "route",
+                    "id": "route:stop_area:SNCF:87671339_stop_area:SNCF:87391003"
+                },
+                {
+                    "type": "commercial_mode",
+                    "id": "commercial_mode:additional_service"
+                },
+                {
+                    "type": "physical_mode",
+                    "id": "physical_mode:LongDistanceTrain"
+                },
+                {
+                    "type": "network",
+                    "id": "network:additional_service"
+                }
+            ]
+        },
+        {
+            "route": {
+                "id": "route:stop_area:SNCF:87671339_stop_area:SNCF:87391003",
+                "name": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                "is_frequence": "False",
+                "direction_type": "forward",
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:LongDistanceTrain",
+                        "name": "Train grande vitesse"
+                    }
+                ],
+                "direction": {
+                    "id": "stop_area:SNCF:87391003",
+                    "name": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                    "quality": 0,
+                    "stop_area": {
+                        "id": "stop_area:SNCF:87391003",
+                        "name": "Paris - Montparnasse - Hall 1 & 2",
+                        "codes": [
+                            {
+                                "type": "source",
+                                "value": "87391003"
+                            },
+                            {
+                                "type": "uic",
+                                "value": "87391003"
+                            }
+                        ],
+                        "timezone": "Europe/Paris",
+                        "label": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                        "coord": {
+                            "lon": "2.320514",
+                            "lat": "48.841172"
+                        },
+                        "links": []
+                    },
+                    "embedded_type": "stop_area"
+                },
+                "geojson": {
+                    "type": "MultiLineString",
+                    "coordinates": []
+                },
+                "links": [],
+                "line": {
+                    "id": "line:stop_area:SNCF:87671339_stop_area:SNCF:87391003",
+                    "name": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                    "code": "",
+                    "color": "000000",
+                    "text_color": "FFFFFF",
+                    "codes": [],
+                    "physical_modes": [
+                        {
+                            "id": "physical_mode:LongDistanceTrain",
+                            "name": "Train grande vitesse"
+                        }
+                    ],
+                    "commercial_mode": {
+                        "id": "commercial_mode:additional_service",
+                        "name": "additional service"
+                    },
+                    "network": {
+                        "id": "network:additional_service",
+                        "name": "additional service",
+                        "links": []
+                    },
+                    "geojson": {
+                        "type": "MultiLineString",
+                        "coordinates": []
+                    },
+                    "links": []
+                }
+            },
+            "stop_point": {
+                "id": "stop_point:SNCF:87571240:Coach",
+                "name": "Saint-Pierre-des-Corps",
+                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                "coord": {
+                    "lon": "0.723539",
+                    "lat": "47.38614"
+                },
+                "links": [],
+                "commercial_modes": [
+                    {
+                        "id": "commercial_mode:FR:Branding::8c1ce319-d566-4575-a416-a46730280ce5:",
+                        "name": "Rémi Exp"
+                    },
+                    {
+                        "id": "commercial_mode:FR:Branding::d5d601cf-e383-4138-8e70-ee1b7fcadd48:",
+                        "name": "Rémi"
+                    },
+                    {
+                        "id": "commercial_mode:additional_service",
+                        "name": "additional service"
+                    }
+                ],
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:Coach",
+                        "name": "Autocar",
+                        "co2_emission_rate": {
+                            "value": 171.0,
+                            "unit": "gEC/Km"
+                        }
+                    },
+                    {
+                        "id": "physical_mode:LongDistanceTrain",
+                        "name": "Train grande vitesse",
+                        "co2_emission_rate": {
+                            "value": 2.36,
+                            "unit": "gEC/Km"
+                        }
+                    }
+                ],
+                "administrative_regions": [
+                    {
+                        "id": "admin:fr:37233",
+                        "name": "Saint-Pierre-des-Corps",
+                        "level": 8,
+                        "zip_code": "37700",
+                        "label": "Saint-Pierre-des-Corps (37700)",
+                        "insee": "37233",
+                        "coord": {
+                            "lon": "0.7189761",
+                            "lat": "47.3898152"
+                        }
+                    }
+                ],
+                "stop_area": {
+                    "id": "stop_area:SNCF:87571240",
+                    "name": "Saint-Pierre-des-Corps",
+                    "codes": [
+                        {
+                            "type": "source",
+                            "value": "87571240"
+                        },
+                        {
+                            "type": "uic",
+                            "value": "87571240"
+                        }
+                    ],
+                    "timezone": "Europe/Paris",
+                    "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                    "coord": {
+                        "lon": "0.723539",
+                        "lat": "47.38614"
+                    },
+                    "links": [],
+                    "administrative_regions": [
+                        {
+                            "id": "admin:fr:37233",
+                            "name": "Saint-Pierre-des-Corps",
+                            "level": 8,
+                            "zip_code": "37700",
+                            "label": "Saint-Pierre-des-Corps (37700)",
+                            "insee": "37233",
+                            "coord": {
+                                "lon": "0.7189761",
+                                "lat": "47.3898152"
+                            }
+                        }
+                    ]
+                },
+                "equipments": []
+            },
+            "stop_date_time": {
+                "departure_date_time": "20261010T171000",
+                "arrival_date_time": "20261010T164700",
+                "additional_informations": [],
+                "links": [
+                    {
+                        "type": "stop_area",
+                        "rel": "origins",
+                        "category": "origin",
+                        "id": "stop_area:SNCF:87671339",
+                        "internal": true
+                    },
+                    {
+                        "type": "stop_area",
+                        "rel": "terminus",
+                        "category": "terminus",
+                        "id": "stop_area:SNCF:87391003",
+                        "internal": true
+                    }
+                ],
+                "data_freshness": "realtime"
+            },
+            "display_informations": {
+                "commercial_mode": "additional service",
+                "network": "additional service",
+                "direction": "Paris - Montparnasse - Hall 1 & 2 (Paris)",
+                "label": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                "color": "000000",
+                "code": "",
+                "headsign": "32507",
+                "name": "Lourdes - Paris - Montparnasse - Hall 1 & 2",
+                "links": [
+                    {
+                        "templated": false,
+                        "rel": "disruptions",
+                        "internal": true,
+                        "type": "disruption",
+                        "id": "42a946f7-af57-4256-a2c6-09cb0906b9de"
+                    },
+                    {
+                        "templated": false,
+                        "rel": "origins",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87671339",
+                        "category": "origin"
+                    },
+                    {
+                        "templated": false,
+                        "rel": "terminus",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87391003",
+                        "category": "terminus"
+                    }
+                ],
+                "text_color": "FFFFFF",
+                "trip_short_name": "32507",
+                "company": "SNCF Voyageurs",
+                "description": "",
+                "physical_mode": "Train grande vitesse",
+                "equipments": []
+            },
+            "links": [
+                {
+                    "type": "line",
+                    "id": "line:stop_area:SNCF:87671339_stop_area:SNCF:87391003"
+                },
+                {
+                    "type": "company",
+                    "id": "company:SNCF:1187"
+                },
+                {
+                    "type": "vehicle_journey",
+                    "id": "vehicle_journey:PIV:REALTIME:2026-10-10:32507:1187:rail:highSpeedRail:FERRE:RealTime:6d3d5a0e-2f30-4b25-b883-c1c2ad9b3fb6"
+                },
+                {
+                    "type": "route",
+                    "id": "route:stop_area:SNCF:87671339_stop_area:SNCF:87391003"
+                },
+                {
+                    "type": "commercial_mode",
+                    "id": "commercial_mode:additional_service"
+                },
+                {
+                    "type": "physical_mode",
+                    "id": "physical_mode:LongDistanceTrain"
+                },
+                {
+                    "type": "network",
+                    "id": "network:additional_service"
+                }
+            ]
+        },
+        {
+            "route": {
+                "id": "route:SNCF:FR:Line::85d3579c-996b-4671-89af-839855ede78a:",
+                "name": "A01",
+                "is_frequence": "False",
+                "direction_type": "forward",
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:RailShuttle",
+                        "name": "Navette ferrée"
+                    }
+                ],
+                "direction": {
+                    "id": "stop_area:SNCF:87571000",
+                    "name": "Tours (Tours)",
+                    "quality": 0,
+                    "stop_area": {
+                        "id": "stop_area:SNCF:87571000",
+                        "name": "Tours",
+                        "codes": [
+                            {
+                                "type": "source",
+                                "value": "87571000"
+                            },
+                            {
+                                "type": "uic",
+                                "value": "87571000"
+                            }
+                        ],
+                        "timezone": "Europe/Paris",
+                        "label": "Tours (Tours)",
+                        "coord": {
+                            "lon": "0.693638",
+                            "lat": "47.389694"
+                        },
+                        "links": []
+                    },
+                    "embedded_type": "stop_area"
+                },
+                "geojson": {
+                    "type": "MultiLineString",
+                    "coordinates": []
+                },
+                "links": [],
+                "line": {
+                    "id": "line:SNCF:FR:Line::85d3579c-996b-4671-89af-839855ede78a:",
+                    "name": "A01",
+                    "code": "A01",
+                    "color": "",
+                    "text_color": "",
+                    "codes": [],
+                    "physical_modes": [
+                        {
+                            "id": "physical_mode:RailShuttle",
+                            "name": "Navette ferrée"
+                        }
+                    ],
+                    "commercial_mode": {
+                        "id": "commercial_mode:SNF",
+                        "name": "SNCF"
+                    },
+                    "network": {
+                        "id": "network:SNCF:SNF",
+                        "name": "SNCF",
+                        "links": []
+                    },
+                    "opening_time": "054200",
+                    "closing_time": "233000",
+                    "geojson": {
+                        "type": "MultiLineString",
+                        "coordinates": []
+                    },
+                    "links": []
+                }
+            },
+            "stop_point": {
+                "id": "stop_point:SNCF:87571240:RailShuttle",
+                "name": "Saint-Pierre-des-Corps",
+                "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                "coord": {
+                    "lon": "0.723539",
+                    "lat": "47.38614"
+                },
+                "links": [],
+                "commercial_modes": [
+                    {
+                        "id": "commercial_mode:SNF",
+                        "name": "SNCF"
+                    }
+                ],
+                "physical_modes": [
+                    {
+                        "id": "physical_mode:RailShuttle",
+                        "name": "Navette ferrée"
+                    }
+                ],
+                "administrative_regions": [
+                    {
+                        "id": "admin:fr:37233",
+                        "name": "Saint-Pierre-des-Corps",
+                        "level": 8,
+                        "zip_code": "37700",
+                        "label": "Saint-Pierre-des-Corps (37700)",
+                        "insee": "37233",
+                        "coord": {
+                            "lon": "0.7189761",
+                            "lat": "47.3898152"
+                        }
+                    }
+                ],
+                "stop_area": {
+                    "id": "stop_area:SNCF:87571240",
+                    "name": "Saint-Pierre-des-Corps",
+                    "codes": [
+                        {
+                            "type": "source",
+                            "value": "87571240"
+                        },
+                        {
+                            "type": "uic",
+                            "value": "87571240"
+                        }
+                    ],
+                    "timezone": "Europe/Paris",
+                    "label": "Saint-Pierre-des-Corps (Saint-Pierre-des-Corps)",
+                    "coord": {
+                        "lon": "0.723539",
+                        "lat": "47.38614"
+                    },
+                    "links": [],
+                    "administrative_regions": [
+                        {
+                            "id": "admin:fr:37233",
+                            "name": "Saint-Pierre-des-Corps",
+                            "level": 8,
+                            "zip_code": "37700",
+                            "label": "Saint-Pierre-des-Corps (37700)",
+                            "insee": "37233",
+                            "coord": {
+                                "lon": "0.7189761",
+                                "lat": "47.3898152"
+                            }
+                        }
+                    ]
+                },
+                "equipments": []
+            },
+            "stop_date_time": {
+                "departure_date_time": "20261010T172300",
+                "base_departure_date_time": "20261010T172300",
+                "arrival_date_time": "20261010T172300",
+                "base_arrival_date_time": "20261010T172300",
+                "additional_informations": [],
+                "links": [
+                    {
+                        "type": "stop_area",
+                        "rel": "origins",
+                        "category": "origin",
+                        "id": "stop_area:SNCF:87571240",
+                        "internal": true
+                    },
+                    {
+                        "type": "stop_area",
+                        "rel": "terminus",
+                        "category": "terminus",
+                        "id": "stop_area:SNCF:87571000",
+                        "internal": true
+                    }
+                ],
+                "data_freshness": "base_schedule"
+            },
+            "display_informations": {
+                "commercial_mode": "SNCF",
+                "network": "SNCF",
+                "direction": "Tours (Tours)",
+                "label": "A01",
+                "color": "",
+                "code": "A01",
+                "headsign": "105342",
+                "name": "A01",
+                "links": [
+                    {
+                        "templated": false,
+                        "rel": "origins",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87571240",
+                        "category": "origin"
+                    },
+                    {
+                        "templated": false,
+                        "rel": "terminus",
+                        "internal": true,
+                        "type": "stop_area",
+                        "id": "stop_area:SNCF:87571000",
+                        "category": "terminus"
+                    }
+                ],
+                "text_color": "",
+                "trip_short_name": "105342",
+                "company": "SNCF Voyageurs",
+                "description": "",
+                "physical_mode": "Navette ferrée",
+                "equipments": []
+            },
+            "links": [
+                {
+                    "type": "line",
+                    "id": "line:SNCF:FR:Line::85d3579c-996b-4671-89af-839855ede78a:"
+                },
+                {
+                    "type": "company",
+                    "id": "company:SNCF:1187"
+                },
+                {
+                    "type": "vehicle_journey",
+                    "id": "vehicle_journey:SNCF:2026-10-10:105342:1187:RailShuttle"
+                },
+                {
+                    "type": "route",
+                    "id": "route:SNCF:FR:Line::85d3579c-996b-4671-89af-839855ede78a:"
+                },
+                {
+                    "type": "commercial_mode",
+                    "id": "commercial_mode:SNF"
+                },
+                {
+                    "type": "physical_mode",
+                    "id": "physical_mode:RailShuttle"
+                },
+                {
+                    "type": "network",
+                    "id": "network:SNCF:SNF"
+                }
+            ]
+        }
+    ],
+    "links": [
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/commercial_modes/{commercial_modes.id}",
+            "templated": true,
+            "rel": "commercial_modes",
+            "type": "commercial_modes"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/vehicle_journeys/{vehicle_journey.id}",
+            "templated": true,
+            "rel": "vehicle_journeys",
+            "type": "vehicle_journey"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/lines/{line.id}",
+            "templated": true,
+            "rel": "lines",
+            "type": "line"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/routes/{route.id}",
+            "templated": true,
+            "rel": "routes",
+            "type": "route"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/stop_points/{stop_point.id}",
+            "templated": true,
+            "rel": "stop_points",
+            "type": "stop_point"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/commercial_modes/{commercial_mode.id}",
+            "templated": true,
+            "rel": "commercial_modes",
+            "type": "commercial_mode"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/disruptions/{disruptions.id}",
+            "templated": true,
+            "rel": "disruptions",
+            "type": "disruptions"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/networks/{network.id}",
+            "templated": true,
+            "rel": "networks",
+            "type": "network"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/physical_modes/{physical_mode.id}",
+            "templated": true,
+            "rel": "physical_modes",
+            "type": "physical_mode"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/companies/{company.id}",
+            "templated": true,
+            "rel": "companies",
+            "type": "company"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/trips/{trip.id}",
+            "templated": true,
+            "rel": "trips",
+            "type": "trip"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/disruptions/{disruption.id}",
+            "templated": true,
+            "rel": "disruptions",
+            "type": "disruption"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/stop_areas/{stop_area.id}",
+            "templated": true,
+            "rel": "stop_areas",
+            "type": "stop_area"
+        },
+        {
+            "href": "https://api.sncf.com/v1/coverage/sncf/physical_modes/{physical_modes.id}",
+            "templated": true,
+            "rel": "physical_modes",
+            "type": "physical_modes"
+        }
+    ],
+    "notes": [],
+    "exceptions": []
+}

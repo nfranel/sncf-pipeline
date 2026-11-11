@@ -26,6 +26,9 @@ select service_date, area_id, station_id, physical_mode, network_id, line_id,
   count(*)         filter (where not is_canceled and has_realtime_update and delay_min < 0) as nb_early_realtime,
   count(*)         filter (where not is_canceled and has_realtime_update and delay_min = 0) as nb_on_time_realtime,
   count(*)         filter (where not is_canceled and has_realtime_update and delay_min > 0) as nb_late_realtime,
-  sum(delay_min)   filter (where not is_canceled and has_realtime_update and delay_min > 0) as sum_late_min_realtime
+  sum(delay_min)   filter (where not is_canceled and has_realtime_update and delay_min > 0) as sum_late_min_realtime,
+  count(*)         filter (where is_disrupted and has_realtime_update) as nb_passages_disrupted_realtime,
+  count(delay_min) filter (where not is_canceled and is_disrupted and has_realtime_update) as nb_delay_obs_disrupted_realtime,
+  sum(delay_min)   filter (where not is_canceled and is_disrupted and has_realtime_update and delay_min > 0) as sum_late_min_disrupted_realtime
 from {{ ref('int_flux_flagged') }}
 group by 1, 2, 3, 4, 5, 6, 7, 8, 9, 10

@@ -16,6 +16,9 @@ models:
               nb_delay_over_120min <= nb_delay_over_60min and nb_delay_over_60min <= nb_delay_over_30min
               and nb_delay_over_30min <= nb_delay_over_10min and nb_delay_over_10min <= nb_delay_over_5min
               and nb_delay_over_5min <= nb_delay_obs and nb_delay_obs <= nb_passages
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "nb_passages_disrupted_realtime <= nb_passages_disrupted"
     columns:
       - name: service_date
         description: "Date at which the passages are aggregated"
@@ -95,6 +98,13 @@ models:
         description: "Daily number of realtime updated passages for which the delay is > 0"
       - name: sum_late_min_realtime
         description: "Sum of the positive delay times (late passages only) each day for realtime updated passages"
+      - name: nb_passages_disrupted_realtime
+        description: "Daily number of disrupted realtime updated passages"
+      - name: nb_delay_obs_disrupted_realtime
+        description: "Daily number of disrupted realtime updated passages that are not cancelled and for which the delay_min is not null"
+      - name: sum_late_min_disrupted_realtime
+        description: "Sum of the positive delay times of disrupted realtime updated passages that are not cancelled"
+
 
   - name: mart_disruption_daily
     description: "Mart for obtaining daily information about disruptions per disruption severity, embedded type and status. Only disruptions impacting at least one of the passages collected are listed. A perturbation with two embedded types will appear for each type. The additional services are never effectives, as considered like new passages instead of actual disruptions. "
